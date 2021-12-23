@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Art's Emporium</title>
+    <meta name="Art Santora's Emprium" content="Portfolio and booking information for Art Santora">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ArtPageStyles2.css' %}">
+    <!-- <link rel="stylesheet" href="ArtPageStyles2.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="myTopnav" class="navbar1">
+        <h3>Art Santora</h3>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a id="sec1" href="#top">Top</a>
+        <a id="sec2" href="#photos">Photos</a>
+        <a id="sec3" href="#youtube">Youtube</a>
+        <a id="sec4" href="#spotify">Spotify</a>
+        <a id="sec5" href="#eventCalendar">Event Calendar</a>
+        <a id="sec6" href="#insta">Insta</a>
+        <a id="sec7" href="#contact">Contact</a>
+    </div>
+    <div id="one" class="bgi1"></div>
+    <div class="midCuts">
+        <div class="galLrow">
+            <div class="gallCol">
+                <a href="{% static 'RK_EastWest_011.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_011.jpg' %}">
+                </a>
+                <a href="{% static '032.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static '032.jpg' %}">
+                </a>
+                <a href="{% static '037.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static '037.jpg' %}">
+                </a>
+                <a href="{% static 'PV_FD_267.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'PV_FD_267.jpg' %}">
+                </a>
+            </div>
+            <div id="two" class="gallCol">
+                <a href="{% static 'DSC_5422.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'DSC_5422.jpg' %}">
+                </a>
+                <a href="{% static 'MA707912.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'MA707912.jpg' %}">
+                </a>
+                <a href="{% static 'RK_EastWest_102.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_102.jpg' %}">
+                </a>
+            </div>
+            <div class="gallCol">
+                <a href="{% static 'RK_EastWest_123.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_123.jpg' %}">
+                </a>
+                <a href="{% static 'PV_FD_404_BW.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'PV_FD_404_BW.jpg' %}">
+                </a>
+                <a href="{% static 'RK_EastWest_002.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_002.jpg' %}">
+                </a>
+                <a href="{% static 'RK_EastWest_178.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_178.jpg' %}">
+                </a>
+            </div>
+            <div class="gallCol">
+                <a href="{% static 'RK_EastWest_075.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'RK_EastWest_075.jpg' %}">
+                </a>
+                <a href="{% static 'PV_FD_259.jpg' %}" class="fancybox" data-fancybox="gallery1">
+                    <img src="{% static 'PV_FD_259.jpg' %}">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bgi2"></div>
+    <div id="five" class="midCuts">
+        <div data-tockify-component="calendar" data-tockify-calendar="events100"></div>
+        <script data-cfasync="false" data-tockify-script="embed"
+            src="https://public.tockify.com/browser/embed.js"></script>
+    </div>
+    <script>
+        /* On user scroll down, hide navbar1. On user scroll up, show navbar1 */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("myTopnav").style.top = "0";
+            } else {
+                document.getElementById("myTopnav").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar1") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar1";
+            }
+        }
+
+        $('#sec1').addClass("active");
+
+        $("#sec1").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#one").offset().top - 66
+            }, 1000);
+            return false
+        });
+
+        $("#sec2").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#two").offset().top - 112
+            }, 1000);
+            return false
+        });
+
+        $("#sec5").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#five").offset().top - 112
+            }, 1000);
+            return false
+        });
+
+    </script>
+</body>
+
+</html>
